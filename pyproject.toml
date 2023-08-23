@@ -1,14 +1,15 @@
 [tool.poetry]
-name = "python-django-blog"
+name = "hexlet-code""
 version = "0.1.0"
 description = ""
 authors = ["u-shev <sheveleva.jul@gmail.com>"]
 readme = "README.md"
-packages = [{include = "hexlet-code"}]
+packages = [{include = "task_manager"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 django = "^4.2.4"
+python-dotenv = "^1.0.0"
 
 
 [build-system]
