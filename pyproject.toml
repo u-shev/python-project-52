@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "python-django-blog"
+version = "0.1.0"
+description = ""
+authors = ["u-shev <sheveleva.jul@gmail.com>"]
+readme = "README.md"
+packages = [{include = "hexlet-code"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+django = "^4.2.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
