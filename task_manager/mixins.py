@@ -15,7 +15,7 @@ class UserLoginRequiredMixin(LoginRequiredMixin):
             return redirect(reverse_lazy('login'))
 
         return super().dispatch(request, *args, **kwargs)
-    
+
 
 class UserPermissionMixin(UserPassesTestMixin):
 
@@ -23,9 +23,10 @@ class UserPermissionMixin(UserPassesTestMixin):
         return self.get_object() == self.request.user
 
     def handle_no_permission(self):
-        messages.error(self.request, _('You have no rights to change another user.'))
+        messages.error(self.request,
+                       _('You have no rights to change another user.'))
         return redirect(reverse_lazy('users'))
-        
+
 
 class DeleteProtectionMixin:
 

@@ -10,3 +10,6 @@ test:
 
 coverage:
 	coverage report
+
+run:
+	python3 manage.py runserver

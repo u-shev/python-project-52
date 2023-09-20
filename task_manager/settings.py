@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'task_manager',
     'task_manager.users',
+    'task_manager.statuses',
     'django_bootstrap5',
 ]
 
@@ -133,7 +134,6 @@ USE_TZ = True
 
 LOCALE_PATHS = (
     'locale',
-    #os.path.join(BASE_DIR, 'locale'),
 )
 
 # Static files (CSS, JavaScript, Images)
@@ -141,3 +141,11 @@ LOCALE_PATHS = (
 
 STATIC_URL = '/static/'
 LOGIN_URL = '/login/'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://127.0.0.1',
+    'https://localhost',
+    'https://task-manager-708m.onrender.com'
+]
+
+FIXTURE_DIRS = ['task_manager/users/tests/fixtures']
