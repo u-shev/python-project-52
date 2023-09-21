@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+    {{ title }} | {% trans 'Task Manager' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container wrapper flex-grow-1">
+    <h1 class="my-4">{{ title }}</h1>
+</div>
+
+<a class="btn btn-primary btn-lg" href="{% url 'create_task' %}">{% trans 'Create task' %}</a>
+
+    <table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">{% trans 'Name' %}</th>
+        <th scope="col">{% trans 'Status' %}</th>
+        <th scope="col">{% trans 'Author' %}</th>
+        <th scope="col">{% trans 'Executor' %}</th>
+        <th scope="col">{% trans 'Creation date' %}</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for task in tasks %}
+    <tr>
+        <th scope="row">{{ task.id }}</th>
+        <td><a href="{% url 'task' task.id %}">{{ task.name }}</a></td>
+        <td>{{ task.status }}</td>
+        <td>{{ task.author }}</td>
+        <td>{{ task.executor }}</td>
+        <td>{{ task.date_created|date:"d.m.Y H:i" }}</td>
+        <td>
+          <a href="{% url 'update_task' task.id %}">{% trans 'Update' %}</a>
+            <br>
+          <a href="{% url 'delete_task' task.id %}">{% trans 'Delete' %}</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
