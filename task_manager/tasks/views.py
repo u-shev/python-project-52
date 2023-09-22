@@ -7,14 +7,18 @@ from task_manager.mixins import UserLoginRequiredMixin, DeleteProtectionMixin
 from .models import Task
 from .forms import TaskForm
 from task_manager.labels.models import Label
+from task_manager.tasks.filters import TaskFilter
+from django_filters.views import FilterView
 
-class TasksListView(UserLoginRequiredMixin, ListView):
+class TasksView(UserLoginRequiredMixin, FilterView):
 
     template_name = 'tasks/tasks.html'
     model = Task
     context_object_name = 'tasks'
+    filterset_class = TaskFilter
     extra_context = {
-        'title': _( 'Tasks')
+        'title': _( 'Tasks'),
+        'button_text': _('Show'),
     }
 
 
