@@ -6,6 +6,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from task_manager.mixins import UserLoginRequiredMixin, DeleteProtectionMixin
 from .models import Task
 from .forms import TaskForm
+from task_manager.labels.models import Label
 
 class TasksListView(UserLoginRequiredMixin, ListView):
 
@@ -22,9 +23,11 @@ class TaskDetailView(UserLoginRequiredMixin,
     model = Task
     template_name = "tasks/task.html"
     context_object_name = "task"
+    labels = Label.objects.all()
     extra_context = {'title': _('Task view'),
                      'btn_update': _('Update'),
                      'btn_delete': _('Delete'),
+                     'labels': labels
                      }
 
 
@@ -34,11 +37,13 @@ class TaskCreateView(UserLoginRequiredMixin,
     template_name = 'form.html'
     model = Task
     form_class = TaskForm
+    labels = Label.objects.all()
     success_url = reverse_lazy( 'tasks')
     success_message = _( 'Task successfully created')
     extra_context = {
         'title': _('Create Task'),
         'button_text': _('Create'),
+        'labels': labels
     }
 
     def form_valid(self, form):
@@ -52,11 +57,13 @@ class TaskUpdateView(UserLoginRequiredMixin,
     template_name = 'form.html'
     model = Task
     form_class = TaskForm
+    labels = Label.objects.all()
     success_url = reverse_lazy('tasks')
     success_message = _('Task updated')
     extra_context = {
         'title': _('Update Task'),
         'button_text': _('Update'),
+        'labels': labels
     }
 
 
