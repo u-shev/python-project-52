@@ -6,7 +6,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 class TaskFilter(FilterSet):
-    labels = filters.ModelChoiceFilter(queryset=Label.objects.all())
+    labels = filters.ModelChoiceFilter(queryset=Label.objects.all(),
+                                       label=_('Label'))
     self_tasks = filters.BooleanFilter(label=_('Self tasks'),
                                        method='get_self_tasks',
                                        lookup_expr='isnull',
