@@ -19,22 +19,20 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 load_dotenv()
-# SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    '0.0.0.0',
     'webserver',
     'task-manager-708m.onrender.com'
 ]
-
 
 # Application definition
 
@@ -85,7 +83,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'task_manager.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -155,7 +152,6 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 FIXTURE_DIRS = ['task_manager/users/tests/fixtures']
-
 
 ROLLBAR = {
     'access_token': os.getenv('POST_SERVER_ITEM_ACCESS_TOKEN'),

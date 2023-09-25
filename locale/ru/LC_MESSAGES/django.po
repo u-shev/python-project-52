@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-22 17:16+0300\n"
+"POT-Creation-Date: 2023-09-25 17:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,8 +46,8 @@ msgstr "Метки"
 msgid "Label successfully created"
 msgstr "Метка успешно создана"
 
-#: task_manager/labels/views.py:30
-msgid "Create Label"
+#: task_manager/labels/views.py:30 task_manager/templates/labels/labels.html:13
+msgid "Create label"
 msgstr "Создать метку"
 
 #: task_manager/labels/views.py:31 task_manager/statuses/views.py:31
@@ -223,12 +223,6 @@ msgstr "Менеджер задач"
 #: task_manager/templates/users/delete.html:12
 msgid "Are you sure you want to delete"
 msgstr "Вы уверены, что хотите удалить"
-
-#: task_manager/templates/labels/labels.html:13
-#, fuzzy
-#| msgid "Creation date"
-msgid "Create label"
-msgstr "Дата создания"
 
 #: task_manager/templates/navbar.html:13
 #: task_manager/templates/users/users.html:11 task_manager/users/models.py:12
