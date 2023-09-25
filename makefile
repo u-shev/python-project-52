@@ -1,13 +1,9 @@
-MANAGE := poetry run python manage.py
-
 install: 
 	poetry install
 
-make-migration:
-	@$ (MANAGE) makemigrations
-
-migrate: make-migration
-	@$ (MANAGE) migrate
+migrate:
+	poetry run python3 manage.py makemigrations
+	poetry run python3 manage.py migrate
 
 build: install migrate
 
@@ -16,19 +12,19 @@ start:
 	poetry run gunicorn -w 5 -b 0.0.0.0:$(PORT) task_manager.wsgi
 
 test:
-	python3 manage.py test
+	poetry run python3 manage.py test
 
 coverage:
-	coverage report
+	poetry run coverage report
 
 run:
-	python3 manage.py runserver
+	poetry run python3 manage.py runserver
 
 makemessages:
-	django-admin makemessages -l ru
+	poetry run django-admin makemessages -l ru
 
 compilemessages:
-	django-admin compilemessages
+	poetry run django-admin compilemessages
 
 lint:
 	poetry run flake8 task_manager
