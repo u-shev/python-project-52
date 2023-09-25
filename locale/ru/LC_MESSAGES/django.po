@@ -25,7 +25,7 @@ msgstr ""
 #: task_manager/templates/statuses/statuses.html:19
 #: task_manager/templates/tasks/tasks.html:30
 msgid "Name"
-msgstr "Название"
+msgstr "Имя"
 
 #: task_manager/labels/models.py:6 task_manager/statuses/models.py:14
 #: task_manager/tasks/models.py:11 task_manager/templates/labels/labels.html:20
