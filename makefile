@@ -1,5 +1,15 @@
-install:
-	poetry install
+MANAGE := poetry run python manage.py
+
+install: .env
+	@poetry install
+
+make-migration:
+	@$ (MANAGE) makemigrations
+
+migrate: make-migration
+	@$ (MANAGE) migrate
+
+build: install migrate
 
 PORT ?= 8000
 start:
@@ -13,3 +23,12 @@ coverage:
 
 run:
 	python3 manage.py runserver
+
+makemessages:
+	django-admin makemessages -l ru
+
+compilemessages:
+	django-admin compilemessages
+
+lint:
+	poetry run flake8 task_manager
