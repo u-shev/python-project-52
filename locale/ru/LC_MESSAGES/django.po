@@ -57,7 +57,7 @@ msgstr "Создать"
 
 #: task_manager/labels/views.py:42
 msgid "Label updated"
-msgstr "Метка изменена"
+msgstr "Метка успешно изменена"
 
 #: task_manager/labels/views.py:44
 msgid "Update Label"
@@ -75,7 +75,7 @@ msgstr "Изменить"
 
 #: task_manager/labels/views.py:55
 msgid "Label deleted"
-msgstr "Метка удалена"
+msgstr "Метка успешно удалена"
 
 #: task_manager/labels/views.py:56 task_manager/statuses/views.py:56
 #: task_manager/tasks/views.py:81
@@ -130,7 +130,7 @@ msgstr "Изменить статус"
 
 #: task_manager/statuses/views.py:55
 msgid "Status deleted"
-msgstr "Статус удален"
+msgstr "Статус успешно удален"
 
 #: task_manager/statuses/views.py:59
 msgid "Delete status"
@@ -197,7 +197,7 @@ msgstr "Изменить задачу"
 
 #: task_manager/tasks/views.py:80
 msgid "Task deleted"
-msgstr "Задача удалена"
+msgstr "Задача успешно удалена"
 
 #: task_manager/tasks/views.py:84
 msgid "Delete Task"
@@ -313,6 +313,3 @@ msgstr "Войти"
 #: task_manager/views.py:28 task_manager/views.py:31
 msgid "You are logged out"
 msgstr "Вы разлогинены"
-
-#~ msgid "Hello, world!"
-#~ msgstr "Привет, мир!"
