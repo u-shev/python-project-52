@@ -1,4 +1,4 @@
-name: run linter
+name: Linter check
 
 on:
   - push
