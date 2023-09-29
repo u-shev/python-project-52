@@ -18,9 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install poetry
-          make install
-          pip install coverage
-          pip install Django
+          pip install -r requirements.txt
 
       - name: Run tests
         env:
@@ -34,5 +32,5 @@ jobs:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
         with:
-          coverageCommand: make test-coverage
+          coverageCommand: coverage xml
           debug: true
