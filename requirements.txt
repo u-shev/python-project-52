@@ -56,8 +56,6 @@ pyrsistent==0.15.5
 pyserial==3.4
 pytest==7.3.1
 pytest-cov==4.0.0
-python-apt==2.0.1+ubuntu0.20.4.1
-python-debian===0.1.36ubuntu1
 python-dotenv==1.0.0
 pytz==2019.3
 rapidfuzz==2.15.1
@@ -65,18 +63,11 @@ requests==2.28.1
 requests-toolbelt==0.10.1
 requests-unixsocket==0.2.0
 rollbar==0.16.3
-SecretStorage==3.3.3
-shellingham==1.5.0.post1
 six==1.14.0
-sos==4.4
 soupsieve==2.4.1
 sqlparse==0.4.4
-tomli==2.0.1
-tomlkit==0.11.8
-ubuntu-advantage-tools==8001
 ufw==0.36
 unattended-upgrades==0.1
 urllib3==1.26.13
 virtualenv==20.23.1
-webencodings==0.5.1
 whitenoise==6.5.0
