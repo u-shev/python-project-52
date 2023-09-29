@@ -31,16 +31,5 @@
       "first_name": "Kitty",
       "last_name": "Smith"
      }
-    },
-    {
-     "model": "users.user",
-     "pk": 4,
-     "fields": {
-      "password": "korn",
-      "username": "jondavis",
-      "date_joined": "2023-09-19T10:00:59.376Z",
-      "first_name": "Jonathan",
-      "last_name": "Davis"
-     }
     }
     ]

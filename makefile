@@ -15,7 +15,8 @@ test:
 	poetry run python3 manage.py test
 
 coverage:
-	poetry run coverage report
+	poetry run coverage run manage.py test
+	poetry run coverage report -m --include=task_manager/*
 
 run:
 	poetry run python3 manage.py runserver

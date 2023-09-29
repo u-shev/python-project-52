@@ -18,11 +18,9 @@
 
 <div class="card m-3">
     <div class="card-body bg-light">
-        <form class="form-inline" method="get">
-            <div class="col-auto">
-                {% bootstrap_form filter.form class="col" %}
+        <form class="form-inline center" method="get">
+                {% bootstrap_form filter.form %}
                 {% bootstrap_button button_text button_type="submit" button_class="btn btn-primary" %}
-            </div>
         </form>
     </div>
 </div>
