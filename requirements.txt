@@ -29,7 +29,6 @@ jedi==0.18.1
 jeepney==0.8.0
 Jinja2==2.10.1
 keyring==23.13.1
-language-selector==0.1
 lockfile==0.12.2
 MarkupSafe==1.1.0
 more-itertools==4.2.0
