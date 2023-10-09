@@ -10,13 +10,23 @@
 ![Привет](https://cdn2.hexlet.io/derivations/image/original/eyJpZCI6IjZjZGE5NDgxMDBiYTdhYjYyNDY0NWVhMWI2MGI4ZWVhLnBuZyIsInN0b3JhZ2UiOiJjYWNoZSJ9?signature=b0a97936e97fa31dfd06a5013a90effe20be352dd142ce9ddf53748842c221cc)
 ![Задачи](https://cdn2.hexlet.io/derivations/image/original/eyJpZCI6IjA1MGY1MTc5ZjJkMTJhZjk2N2E3OWMyYzhhYjg0N2Q5LnBuZyIsInN0b3JhZ2UiOiJjYWNoZSJ9?signature=39fa5674a2ef9c60338539540b36423cedf327f28b57c43c62ce7416513c10f4)
 
-### Установка
-Для корректной работы нужны версии python 3.8.1 и poetry 1.4.2, также нужно установить PostrgreSQL.
-#### Клонирование репозитария
+#### Вне зависимости от выбранного способа установки вам потребуется клонировать репозиторий и установить секретные ключи
+#### Клонирование репозитория
 ```
 git clone git@github.com:u-shev/python-project-52.git
 cd python-project-52
-```  
+``` 
+#### Секретные ключи
+Создать в директории task_manager .env файл для переменных окружения со следующей информацией:  
+DATABASE_URL=postgresql://{username}:{password}@{host}:{port}/{databasename}  
+SECRET_KEY='{your secret key}'
+### Установка с помощью docker
+Вам потребуется установить и запустить docker и выполнить слудующую команду
+```
+docker-compose up
+```
+### Установка вручную
+Для корректной работы нужны версии python 3.8.1 и poetry 1.4.2, также нужно установить PostrgreSQL.
 #### Создание базы данных
 ```
 whoami
@@ -26,10 +36,6 @@ createdb {databasename}
 psql {databasename} < database.sql
 ```
 Локально можно использовать SQLite
-#### Секретные ключи
-Создать в директории task_manager .env файл для переменных окружения со следующей информацией:  
-DATABASE_URL=postgresql://{username}:{password}@{host}:{port}/{databasename}  
-SECRET_KEY='{your secret key}'
 #### Установка зависимостей
 ```make install```  
 #### Подготовка базы данных
